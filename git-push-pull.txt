@@ -1,0 +1,50 @@
+GITHUB 
+communication frm terminal(local) to github happens thru "ssh" and not thru email n pswd
+Git is software and GitHub is a service to host ur git online
+used : collaboration + backup + open source
+git clone <url>
+
+git config --global user.name "Likhi856"
+git config --global user.email "sanjan.."
+
+Setup SSH keys to connect with github, github uses SSh to allow you to push code
+pswd based code push is not allowed
+
+to check if remote repo is connected :
+git remote -v
+
+to connect remote repo
+git remote add origin url
+(origin - any name can be kept :means name of this repo on github is origin(remote name)
+)
+
+git push -u origin main
+(push into origin from my main branch)
+
+git remote rename oldname newname
+git remote remove name (when you want to delete a remote reference from your local Git configuration.)
+
+push:
+git push <remote name> <branch>
+git push -u origin main
+-u: (links origin w main)setup an upstream that allow u to run future COMMAND
+git push
+and it push the code directly to github
+
+pull n fetch diff:
++---------+     +---------+     +-------------+     +--------------+
+|  Work   | --> |  Stage  | --> |  Local Repo | <-- |  Remote Repo |
++---------+     +---------+     +-------------+     +--------------+
+       ^                ^                ^                 ^
+       |                |                |                 |
+       |                |                |                 |
+       |                |                |   git fetch     |
+       |                |                |<----------------|
+       |                |                |   (get info but don’t put in work)
+       |                |                |
+       |                |                |   git pull
+       |                |<---------------|
+       |                |   (get info & add it in work)
+       |
+    git pull = git fetch + git merge
+    git pull origin main  → changes merged to main from origin
